@@ -147,4 +147,30 @@ DELETE FROM cats WHERE name="Egg";
 DELETE FROM cats WHERE age=4;
 
 
+## String Function
+
+source file_name.sql
+
+#### CONCAT
+CONCAT(column, another_column);
+CONCAT(auther_fname, ' ', auther_lname);
+
+SELECT CONCAT('Hello', '...', 'WORLD');
+
+SELECT CONCAT(author_fname, ' ', author_lname) FROM books;
+SELECT CONCAT(author_fname, ' ', author_lname) AS 'full name' FROM books;
+SELECT author_fname AS first, author_lname AS last, CONCAT(author_fname, ', ', author_lname) AS full FROM books;
+
+#### CONCAT_WS - concat with separator
+SELECT CONCAT_WS(' - ', title, author_fname, author_lname) FROM books;
+
+
+#### SUBSTRING - work with parts of strings
+SELECT SUBSTRING('Hello WORLD', 1, 4);
+
+
+
+
+
+
 
