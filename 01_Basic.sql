@@ -128,7 +128,7 @@ SELECT name, age FROM cats;
 
 #### WHERE clause to get specific
 SELECT * FROM cats WHERE age=4;
-SELECT * FROM CATS WHERE name=Egg';
+SELECT * FROM CATS WHERE name='Egg';
 
 * case-insensitive
 
@@ -166,11 +166,31 @@ SELECT CONCAT_WS(' - ', title, author_fname, author_lname) FROM books;
 
 
 #### SUBSTRING - work with parts of strings
-SELECT SUBSTRING('Hello WORLD', 1, 4);
+SELECT SUBSTRING('Hello WORLD', 1, 4);  # Hell
+SELECT SUBSTRING('Hello World', 7);     # World
+SELECT SUBSTRING('Hello World', -3);    # rld
+
+SELECT SUBSTRING(title, 1, 10) AS 'short title' FROM books;
+
+* SUBSTR() also works
+
+
+#### CONCAT + SUBSTRING
+SELECT CONCAT(SUBSTRING(title, 1, 10), '...') AS 'short title' FROM books;
+
+
+#### REPLACE - replace parts of strings
+SELECT REPLACE('Hello World', 'Hell', '%$&@');
+SELECT REPLACE('cheese bread coffee milk', ' ', ' and ');
+SELECT REPLACE(title, 'e', '3') FROM books;
+
+* case sensitive
+
+#### SUBSTRING + REPLACE
+SELECT
+    SUBSTRING(REPLACE(title, 'e', '3'), 1, 10)
+FROM books;
 
 
 
-
-
-
-
+### REVERSE
