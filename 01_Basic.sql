@@ -9,6 +9,8 @@ SELECT database();      # Show currently using database
 
 
 # Tables Commands
+SHOW TABLES;
+
 CREATE TABLE tablename
 (
  column_name data_type,
